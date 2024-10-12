@@ -7,10 +7,12 @@
   .container {
     display: flex;
     justify-content: center;
-  }
-}
 
-.carousel img {
-  object-fit: fill;
-  height: 100%;
+    .flowbiteCarousel {
+      img {
+        object-fit: fill;
+        height: 100%;
+      }
+    }
+  }
 }
