@@ -1,0 +1,16 @@
+.carousel {
+  padding: 0 12%;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.carousel img {
+  object-fit: fill;
+  height: 100%;
+}
