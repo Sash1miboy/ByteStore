@@ -2,7 +2,7 @@ import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 
 interface ProductCardProps {
-  id: string;
+  id?: string;
   image: string;
   name: string;
   price: string;
@@ -24,13 +24,13 @@ const formatPrice = (price: string): string => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  //   id,
+  // id,
   image,
   name,
   price,
 }) => {
   return (
-    <Link to="/" className="productCard">
+    <Link to="#" className="productCard">
       <div className="containerCard rounded-md">
         <img src={image} alt={name} className="productImage" />
         <div className="productInfo">
