@@ -5,7 +5,7 @@ import Recommendation from "../../components/recommendation/Recommendation";
 
 const Home = () => {
   return (
-    <div className="home bg-gray-25">
+    <div className="home bg-gray-50">
       <Carousel />
       <Categories />
       <Recommendation />
