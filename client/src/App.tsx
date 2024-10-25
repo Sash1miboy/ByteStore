@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Product from "./pages/product/Product";
 
 function App() {
   const Layout = () => {
@@ -25,6 +26,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/product",
+          element: <Product />,
         },
       ],
     },

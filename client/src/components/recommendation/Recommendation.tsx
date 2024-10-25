@@ -14,7 +14,7 @@ const Recommendation = () => {
           {product.map((products) => (
             <ProductCard
               key={products.id}
-              image={products.image}
+              images={products.images ?? []}
               name={products.name}
               price={products.price}
             />
