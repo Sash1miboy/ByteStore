@@ -23,13 +23,13 @@ const formatPrice = (price: number): string => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  // id,
+  id,
   images,
   name,
   price,
 }) => {
   return (
-    <Link to="/product" className="productCard">
+    <Link to={`/product/${id}`} className="productCard">
       <div className="containerCard rounded-md">
         <img src={images[0]} alt={name} className="productImage" />
         <div className="productInfo">

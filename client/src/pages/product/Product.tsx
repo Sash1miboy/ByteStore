@@ -2,25 +2,37 @@ import "./Product.scss";
 import { product } from "../../data/dummyProduct";
 import { Carousel as FlowbiteCarousel } from "flowbite-react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Product = () => {
-  const startProduct = product[0];
+  const { id } = useParams<{ id: string }>();
+  const productId = parseInt(id ?? "0", 10);
+  const startProduct = product.find((p) => p.id === productId);
 
-  const [soldCount] = useState(Math.floor(Math.random() * 500) + 1);
+  const [soldCount] = useState(Math.floor(Math.random() * 300) + 1);
   const [rating] = useState((Math.random() * 1 + 4).toFixed(1));
   const [ratingCount] = useState(Math.floor(Math.random() * 100) + 1);
 
   const [showMore, setShowMore] = useState(false);
   const toggleShowMore = () => setShowMore(!showMore);
 
+  if (!startProduct) return <div>Product not found</div>;
+
+  const customTheme = {
+    control: {
+      base: "flex items-center justify-center w-10 h-10 text-white transition duration-300 bg-gray-300 rounded-full hover:bg-black",
+    },
+  };
+
   return (
     <div className="product">
       <div className="container">
         <div className="preview">
           <FlowbiteCarousel
-            className="flowbiteCarousel h-[35rem] w-[35rem]"
+            className="flowbiteCarousel h-[35rem] w-[35rem] "
             slide={false}
             indicators={false}
+            theme={customTheme}
           >
             {startProduct.images?.map((image, index) => (
               <img
