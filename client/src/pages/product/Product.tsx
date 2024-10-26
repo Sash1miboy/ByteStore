@@ -11,7 +11,7 @@ const Product = () => {
 
   const [soldCount] = useState(Math.floor(Math.random() * 300) + 1);
   const [rating] = useState((Math.random() * 1 + 4).toFixed(1));
-  const [ratingCount] = useState(Math.floor(Math.random() * 100) + 1);
+  const [ratingCount] = useState(Math.floor(Math.random() * soldCount) + 1);
 
   const [showMore, setShowMore] = useState(false);
   const toggleShowMore = () => setShowMore(!showMore);
@@ -29,7 +29,7 @@ const Product = () => {
       <div className="container">
         <div className="preview">
           <FlowbiteCarousel
-            className="flowbiteCarousel h-[35rem] w-[35rem] "
+            className="flowbiteCarousel"
             slide={false}
             indicators={false}
             theme={customTheme}
@@ -63,7 +63,7 @@ const Product = () => {
             <button className="cartButton hover:bg-gray-100">
               Add to Cart
             </button>
-            <button className="buyButton bg-[#00B16A] hover:bg-[#009B5D] text-white">
+            <button className="buyButton bg-[#00B16A] hover:bg-[#009B5D] border-2 border-[#00B16A] hover:border-[#009B5D] text-white">
               Buy
             </button>
           </div>
