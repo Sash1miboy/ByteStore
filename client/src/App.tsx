@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Product from "./pages/product/Product";
+import BuildPC from "./pages/buildPC/BuildPC";
 
 function App() {
   const Layout = () => {
@@ -30,6 +31,10 @@ function App() {
         {
           path: "/product/:id",
           element: <Product />,
+        },
+        {
+          path: "/build-pc",
+          element: <BuildPC />,
         },
       ],
     },

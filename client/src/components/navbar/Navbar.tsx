@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
 
           <div className="tools">
-            <Link to="#" className="link buildPC">
+            <Link to="/build-pc" className="link buildPCIcon">
               <img src="/wrench-alt.svg" alt="wrench" className="w-6 h-6" />
               Build PC
             </Link>
