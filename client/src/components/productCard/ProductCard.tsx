@@ -2,10 +2,10 @@ import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 
 interface ProductCardProps {
-  id?: string;
-  image: string;
+  id?: number;
+  images: string[];
   name: string;
-  price: string;
+  price: number;
 }
 
 const addDot = (character: string, num: number): string => {
@@ -18,23 +18,22 @@ const addDot = (character: string, num: number): string => {
   }
 };
 
-const formatPrice = (price: string): string => {
-  const numericPrice = parseInt(price, 10);
-  return `Rp${numericPrice.toLocaleString("id-ID")}`;
+const formatPrice = (price: number): string => {
+  return `Rp${price.toLocaleString("id-ID")}`;
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  // id,
-  image,
+  id,
+  images,
   name,
   price,
 }) => {
   return (
-    <Link to="#" className="productCard">
+    <Link to={`/product/${id}`} className="productCard">
       <div className="containerCard rounded-md">
-        <img src={image} alt={name} className="productImage" />
+        <img src={images[0]} alt={name} className="productImage" />
         <div className="productInfo">
-          <span className="productName">{addDot(name, 30)}</span>
+          <span className="productName">{addDot(name, 26)}</span>
           <span className="productPrice">{formatPrice(price)}</span>
         </div>
         <button className="bg-[#00B16A] hover:bg-[#009B5D] text-white">
