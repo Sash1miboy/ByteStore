@@ -1,0 +1,49 @@
+.partLine {
+  align-items: center;
+  td {
+    padding: 0.75rem 4.5rem;
+    span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    select {
+      border: 1px solid #cccccc;
+      border-radius: 0.375rem;
+      width: 20rem;
+      height: 2.5rem;
+    }
+
+    input {
+      border: 1px solid #cccccc;
+      border-radius: 0.375rem;
+      width: 5rem;
+      height: 2.5rem;
+    }
+
+    .showPrice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #cccccc;
+      border-radius: 0.375rem;
+      width: 10rem;
+      height: 2.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    button {
+      background-color: #02a9f7;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.375rem;
+
+      &:hover {
+        background-color: #0291d7;
+      }
+    }
+  }
+}

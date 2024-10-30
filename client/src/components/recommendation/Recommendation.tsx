@@ -1,4 +1,4 @@
-import { product } from "../../data/dummyProduct";
+import { products } from "../../data/dummyProduct";
 import ProductCard from "../productCard/ProductCard";
 import "./Recommendation.scss";
 
@@ -11,13 +11,13 @@ const Recommendation = () => {
           Recommendation For You
         </div>
         <div className="content">
-          {product.map((products) => (
+          {products.map((product) => (
             <ProductCard
-              key={products.id}
-              id={products.id}
-              images={products.images ?? []}
-              name={products.name}
-              price={products.price}
+              key={product.id}
+              id={product.id}
+              images={product.images ?? []}
+              name={product.name}
+              price={product.price}
             />
           ))}
         </div>
