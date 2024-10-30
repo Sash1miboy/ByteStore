@@ -5,4 +5,7 @@ export interface Product {
   desc: string;
   images: string[];
   category: string;
+  socketType?: string;
+  memoryType?: "DDR4" | "DDR5";
+  estPower?: number;
 }

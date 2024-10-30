@@ -3,6 +3,9 @@ import ProductCard from "../productCard/ProductCard";
 import "./Recommendation.scss";
 
 const Recommendation = () => {
+  const MAX_DISPLAY_ITEMS = 18;
+  const displayedProducts = products.slice(0, MAX_DISPLAY_ITEMS);
+
   return (
     <div className="recommendation">
       <div className="container rounded-md">
@@ -11,7 +14,7 @@ const Recommendation = () => {
           Recommendation For You
         </div>
         <div className="content">
-          {products.map((product) => (
+          {displayedProducts.map((product) => (
             <ProductCard
               key={product.id}
               id={product.id}

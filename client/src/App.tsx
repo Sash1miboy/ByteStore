@@ -7,12 +7,14 @@ import Home from "./pages/home/Home";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Product from "./pages/product/Product";
 import BuildPC from "./pages/buildPC/BuildPC";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   const Layout = () => {
     return (
       <div className="app">
         <Navbar />
+        <ScrollToTop />
         <Outlet />
         <Footer />
       </div>

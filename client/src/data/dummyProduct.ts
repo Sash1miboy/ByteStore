@@ -26,6 +26,8 @@ export const products: Product[] = [
       "https://s3.bukalapak.com/img/82063482103/large/data.jpeg",
     ],
     category: "CPU",
+    socketType: "AM4",
+    estPower: 65,
   },
   {
     id: 3,
@@ -38,6 +40,8 @@ export const products: Product[] = [
       "https://cdn.medcom.id/dynamic/content/2023/11/01/1627356/fGRYSDTsZw.jpeg?w=700",
     ],
     category: "CPU",
+    socketType: "LGA1700",
+    estPower: 253,
   },
   {
     id: 4,
@@ -50,6 +54,8 @@ export const products: Product[] = [
       "https://i.pcmag.com/imagery/reviews/02I73yd0xLuN6PrbwTasvkT-1..v1664388661.jpg",
     ],
     category: "CPU",
+    socketType: "AM5",
+    estPower: 142,
   },
   {
     id: 5,
@@ -62,6 +68,7 @@ export const products: Product[] = [
       "https://www.gigabyte.com/FileUpload/Global/KeyFeature/1857/innergigabyteimages/rgb/cover.png",
     ],
     category: "GPU",
+    estPower: 170,
   },
   {
     id: 6,
@@ -110,6 +117,9 @@ export const products: Product[] = [
       "https://www.techspot.com/articles-info/2252/images/2021-05-12-image.jpg",
     ],
     category: "Motherboard",
+    socketType: "LGA1200",
+    memoryType: "DDR4",
+    estPower: 70,
   },
   {
     id: 10,
@@ -158,6 +168,8 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2021/9/10/e6aeb823-83a9-40f0-831b-c6beedf95011.jpg",
     ],
     category: "CPU",
+    socketType: "LGA1200",
+    estPower: 134,
   },
   {
     id: 14,
@@ -170,6 +182,9 @@ export const products: Product[] = [
       "https://storage-asset.msi.com/global/picture/image/feature/mb/B650M/B650m-gaming-plus-wifi/images/b650m-gaming-plus-wifi-pre-installed.png",
     ],
     category: "Motherboard",
+    socketType: "AM5",
+    memoryType: "DDR5",
+    estPower: 70,
   },
   {
     id: 15,
@@ -182,6 +197,9 @@ export const products: Product[] = [
       "https://dlcdnimgs.asus.com/websites/global/products/rb5daaywfosj5ivo/img/spec/spec-mobile.png",
     ],
     category: "Motherboard",
+    socketType: "AM4",
+    memoryType: "DDR4",
+    estPower: 70,
   },
   {
     id: 16,
@@ -194,6 +212,9 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/700/hDjmkQ/2024/7/16/8ada799b-ecd4-4b60-a546-cae7b7b61360.jpg",
     ],
     category: "Motherboard",
+    socketType: "LGA1700",
+    memoryType: "DDR5",
+    estPower: 70,
   },
   {
     id: 17,
@@ -206,6 +227,7 @@ export const products: Product[] = [
       "https://dlcdnwebimgs.asus.com/files/media/ed4adee6-27dc-46e9-8518-28407b5fc4b3/img/kv-cover.png",
     ],
     category: "GPU",
+    estPower: 230,
   },
   {
     id: 18,
@@ -218,6 +240,7 @@ export const products: Product[] = [
       "https://oneit-solution.com/wp-content/uploads/2024/05/6f857eb8-2d37-44bc-9be6-583bb05ced62.jpg",
     ],
     category: "GPU",
+    estPower: 220,
   },
   {
     id: 19,
@@ -230,6 +253,7 @@ export const products: Product[] = [
       "https://images.nvidia.com/geforce-com/international/images/nvidia-geforce-gtx-1080-ti/GeForce_GTX_1080ti_3qtr_top_left.png",
     ],
     category: "GPU",
+    estPower: 250,
   },
   {
     id: 20,
@@ -242,6 +266,8 @@ export const products: Product[] = [
       "https://m.media-amazon.com/images/I/719NnZDp4BL.jpg",
     ],
     category: "Memory",
+    memoryType: "DDR4",
+    estPower: 14,
   },
   {
     id: 21,
@@ -254,6 +280,8 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/3/5/8a5a62bf-327e-466c-8dc6-634126ab9c97.jpg",
     ],
     category: "Memory",
+    memoryType: "DDR4",
+    estPower: 14,
   },
   {
     id: 22,
@@ -266,6 +294,8 @@ export const products: Product[] = [
       "https://www.gskill.com/_upload/images/167349124215.jpg",
     ],
     category: "Memory",
+    memoryType: "DDR5",
+    estPower: 29,
   },
   {
     id: 23,
@@ -278,6 +308,8 @@ export const products: Product[] = [
       "https://image.made-in-china.com/226f3j00uKIWLVOlnvbp/Corsair-V32GB-2-X-16GB-5200-PIN-PC-RAM-DDR5-41600-PC5-288-Intel-XMP-3-0-Desktop-Memory.webp",
     ],
     category: "Memory",
+    memoryType: "DDR5",
+    estPower: 29,
   },
   {
     id: 24,
@@ -290,6 +322,7 @@ export const products: Product[] = [
       "https://www.phoronix.net/image.php?id=samsung-970evo-plus&image=samsung_970evoplus_3_med",
     ],
     category: "Storage",
+    estPower: 10,
   },
   {
     id: 25,
@@ -302,6 +335,7 @@ export const products: Product[] = [
       "https://www.club386.com/wp-content/uploads/2022/01/cdsdfeew-01.jpg",
     ],
     category: "Storage",
+    estPower: 10,
   },
   {
     id: 26,
@@ -314,6 +348,7 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2023/10/11/5c74c2e5-54cb-400a-86b2-10039e7a294d.jpg",
     ],
     category: "Storage",
+    estPower: 20,
   },
   {
     id: 27,
@@ -326,6 +361,7 @@ export const products: Product[] = [
       "https://elextraonline.com/wp-content/uploads/2018/07/wd-blue-2tb-14734-1_11599-600x450.jpg",
     ],
     category: "Storage",
+    estPower: 20,
   },
   {
     id: 28,
@@ -434,6 +470,7 @@ export const products: Product[] = [
       "https://www.arctic.de/media/73/39/0a/1725362018/Liquid_Freezer_III_240_Black_G01_eha_3_awards.png",
     ],
     category: "CPU Cooler",
+    estPower: 15,
   },
   {
     id: 37,
@@ -446,6 +483,7 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/700/VqbcmM/2023/11/1/e6042969-f0ec-4f84-ac15-413c3dcc1462.jpg",
     ],
     category: "CPU Cooler",
+    estPower: 15,
   },
   {
     id: 38,
@@ -458,6 +496,7 @@ export const products: Product[] = [
       "https://www.kharismakencana.com/image-product/img20688-1690939379.png",
     ],
     category: "CPU Cooler",
+    estPower: 10,
   },
   {
     id: 39,
@@ -470,6 +509,7 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/5/17/6800443c-4afd-4022-95ff-533eb6b47f63.jpg",
     ],
     category: "CPU Cooler",
+    estPower: 10,
   },
   {
     id: 40,
@@ -482,6 +522,7 @@ export const products: Product[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc_wir5IePMJeDWl4FNmLWLgIboJXwSq47iA&s",
     ],
     category: "PC Fans",
+    estPower: 5,
   },
   {
     id: 41,
@@ -494,6 +535,7 @@ export const products: Product[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTngCrbPJZ6zximetfoArGQ0qVI3lue0iwaSg&s",
     ],
     category: "PC Fans",
+    estPower: 5,
   },
   {
     id: 42,
@@ -506,6 +548,7 @@ export const products: Product[] = [
       "https://images.tokopedia.net/img/cache/700/VqbcmM/2024/1/13/37d63efa-333e-4fcd-866f-ac92d8b82f19.jpg",
     ],
     category: "PC Fans",
+    estPower: 25,
   },
   {
     id: 43,
@@ -518,5 +561,6 @@ export const products: Product[] = [
       "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/101/MTA-132776092/no-brand_no-brand_full01.jpg",
     ],
     category: "PC Fans",
+    estPower: 15,
   },
 ];

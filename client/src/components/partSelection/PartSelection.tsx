@@ -1,3 +1,4 @@
+import React from "react";
 import { Product } from "../../data/ProductInterface";
 import "./PartSelection.scss";
 
@@ -21,6 +22,8 @@ const PartSelection: React.FC<PartSelectionProps> = ({
   const formatPrice = (price: number): string => {
     return `Rp${price.toLocaleString("id-ID")}`;
   };
+
+  const totalPrice = selectedOption ? selectedOption.price * quantity : 0;
 
   return (
     <tr className="partLine">
@@ -48,7 +51,7 @@ const PartSelection: React.FC<PartSelectionProps> = ({
       </td>
       <td>
         <span className="showPrice">
-          {selectedOption ? `${formatPrice(selectedOption.price)}` : "-"}
+          {selectedOption ? `${formatPrice(totalPrice)}` : "-"}
         </span>
       </td>
       <td>
