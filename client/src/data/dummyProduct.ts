@@ -1,4 +1,6 @@
-export const product = [
+import { Product } from "./ProductInterface";
+
+export const products: Product[] = [
   {
     id: 1,
     name: "Logitech G PRO X 60 LIGHTSPEED Keyboard Wireless Tactile with Lightsync - Black",
@@ -10,6 +12,7 @@ export const product = [
       "https://media.ldlc.com/r1600/ld/products/00/06/12/60/LD0006126041.jpg",
       "https://m.media-amazon.com/images/I/61JmLKdTK1L.jpg",
     ],
+    category: "Keyboard",
   },
   {
     id: 2,
@@ -22,6 +25,7 @@ export const product = [
       "https://image.made-in-china.com/2f0j00MtUcupyCabka/AMD-Ryzen-3-3200g-Desktop-Processor-4-Cores-4-0-GHz-Socket-Am4-Computer-CPU.webp",
       "https://s3.bukalapak.com/img/82063482103/large/data.jpeg",
     ],
+    category: "CPU",
   },
   {
     id: 3,
@@ -33,6 +37,7 @@ export const product = [
       "https://image.made-in-china.com/2f0j00FMUcdBvapjoJ/Intel-Core-I9-14900K-Desktop-Processor-24-Cores-6-0-GHz-LGA1700-Computer-CPU.webp",
       "https://cdn.medcom.id/dynamic/content/2023/11/01/1627356/fGRYSDTsZw.jpeg?w=700",
     ],
+    category: "CPU",
   },
   {
     id: 4,
@@ -44,6 +49,7 @@ export const product = [
       "https://i.pcmag.com/imagery/reviews/02I73yd0xLuN6PrbwTasvkT-4..v1664388661.jpg",
       "https://i.pcmag.com/imagery/reviews/02I73yd0xLuN6PrbwTasvkT-1..v1664388661.jpg",
     ],
+    category: "CPU",
   },
   {
     id: 5,
@@ -55,6 +61,7 @@ export const product = [
       "https://www.gigabyte.com/FileUpload/Global/KeyFeature/1857/innergigabyteimages/eagle/03_s.jpg",
       "https://www.gigabyte.com/FileUpload/Global/KeyFeature/1857/innergigabyteimages/rgb/cover.png",
     ],
+    category: "GPU",
   },
   {
     id: 6,
@@ -66,6 +73,7 @@ export const product = [
       "https://down-id.img.susercontent.com/file/id-11134207-7quky-lkaghv5litz610",
       "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//108/MTA-49415877/oem_oem_full02.jpg",
     ],
+    category: "Mouse",
   },
   {
     id: 7,
@@ -77,6 +85,7 @@ export const product = [
       "https://row.hyperx.com/cdn/shop/products/hyperx_cloud_earbuds_black_red_2_main_dongle_2048x2048.jpg?v=1666742100",
       "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/93/MTA-145341426/no-brand_no-brand_full01.jpg",
     ],
+    category: "Headphone",
   },
   {
     id: 8,
@@ -88,6 +97,7 @@ export const product = [
       "https://m.media-amazon.com/images/I/61Ot5347uUL._AC_UF894,1000_QL80_.jpg",
       "https://media.karousell.com/media/photos/products/2022/7/29/steelseries_arctis_5_black_wit_1659104826_6342280b_progressive.jpg",
     ],
+    category: "Headphone",
   },
   {
     id: 9,
@@ -99,6 +109,7 @@ export const product = [
       "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-51794481/oem_oem_full02.jpg",
       "https://www.techspot.com/articles-info/2252/images/2021-05-12-image.jpg",
     ],
+    category: "Motherboard",
   },
   {
     id: 10,
@@ -110,6 +121,7 @@ export const product = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-7BW9vlNYkzdzQyXLXlGEoGnfTNOYfYfGeQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aL5zmxk55-GwsvAL7pWasfDzxhosmP8Bag&s",
     ],
+    category: "Accesories",
   },
   {
     id: 11,
@@ -121,6 +133,7 @@ export const product = [
       "https://img.lazcdn.com/g/p/ee2a53136a0ce827199267be45c70e04.jpg_960x960q80.jpg_.webp",
       "https://images-cdn.ubuy.co.in/6557ce4d4f1ab710fc7b6821-logitech-g502-x-plus-millenium-falcon.jpg",
     ],
+    category: "Mouse",
   },
   {
     id: 12,
@@ -132,5 +145,6 @@ export const product = [
       "https://scontent.fcgk6-2.fna.fbcdn.net/v/t39.30808-6/276172267_3151628085110060_5013712751090209096_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3a1ebe&_nc_eui2=AeH5ypdaUw6axpAqA1ISfPYYOTxJGU_1itE5PEkZT_WK0Uw6M0ibfxCDKc-8HjgVqzLrINjpT6q1-9wh6UcWPvkI&_nc_ohc=yIw5Ml9H_wEQ7kNvgEjRUP7&_nc_zt=23&_nc_ht=scontent.fcgk6-2.fna&_nc_gid=Ama6kyUaH4HIS6XZjRt0yMj&oh=00_AYC3uyKEDKPwPqg1i26d0qK8bAm1rA46pXALCAz7kl7sFA&oe=6722757E",
       "https://i.ytimg.com/vi/SqUnPvMJORw/maxresdefault.jpg",
     ],
+    category: "Prebuilt",
   },
 ];

@@ -63,6 +63,7 @@
           }
         }
         .partLine {
+          align-items: center;
           td {
             padding: 0.75rem 4.5rem;
             span {
@@ -84,11 +85,16 @@
               height: 2.5rem;
             }
 
-            div {
+            .showPrice {
+              display: flex;
+              align-items: center;
+              justify-content: center;
               border: 1px solid #cccccc;
               border-radius: 0.375rem;
               width: 10rem;
               height: 2.5rem;
+              font-size: 1rem;
+              font-weight: 500;
             }
 
             button {

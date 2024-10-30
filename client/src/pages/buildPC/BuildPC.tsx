@@ -1,6 +1,34 @@
 import "./BuildPC.scss";
+import { products } from "../../data/dummyProduct";
+import { Product } from "../../data/ProductInterface";
+import { useState } from "react";
+
+const formatPrice = (price: number): string => {
+  return `Rp${price.toLocaleString("id-ID")}`;
+};
 
 const BuildPC = () => {
+  const [selectedCPU, setSelectedCPU] = useState<Product | null>(null);
+  const [cpuQuantity, setCpuQuantity] = useState<number>(0);
+
+  const cpuOptions: Product[] = products.filter(
+    (product) => product.category === "CPU"
+  );
+
+  const handleCPUChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const productId = Number(event.target.value);
+    const product = cpuOptions.find((cpu) => cpu.id === productId) || null;
+    setSelectedCPU(product);
+    setCpuQuantity(product ? 1 : 0);
+  };
+
+  const handleCpuQuantityChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = Math.max(Number(event.target.value), 1);
+    setCpuQuantity(value);
+  };
+
   return (
     <div className="buildPC">
       <div className="container">
@@ -32,13 +60,28 @@ const BuildPC = () => {
                 <span>CPU:</span>
               </td>
               <td>
-                <select name="" id=""></select>
+                <select name="" id="" onChange={handleCPUChange}>
+                  <option value="">Choose your CPU...</option>
+                  {cpuOptions.map((cpu) => (
+                    <option key={cpu.id} value={cpu.id}>
+                      {cpu.name}
+                    </option>
+                  ))}
+                </select>
               </td>
               <td>
-                <input type="number" name="" id="" />
+                <input
+                  type="number"
+                  value={cpuQuantity}
+                  min={1}
+                  onChange={handleCpuQuantityChange}
+                  disabled={!selectedCPU}
+                />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice">
+                  {selectedCPU ? `${formatPrice(selectedCPU.price)}` : "-"}
+                </span>
               </td>
               <td>
                 <button>Buy</button>
@@ -55,7 +98,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -72,7 +115,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -89,7 +132,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -106,7 +149,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -123,7 +166,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -140,7 +183,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -157,7 +200,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>
@@ -174,7 +217,7 @@ const BuildPC = () => {
                 <input type="number" name="" id="" />
               </td>
               <td>
-                <div></div>
+                <span className="showPrice"></span>
               </td>
               <td>
                 <button>Buy</button>

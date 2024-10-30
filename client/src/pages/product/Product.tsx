@@ -1,5 +1,5 @@
 import "./Product.scss";
-import { product } from "../../data/dummyProduct";
+import { products } from "../../data/dummyProduct";
 import { Carousel as FlowbiteCarousel } from "flowbite-react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 const Product = () => {
   const { id } = useParams<{ id: string }>();
   const productId = parseInt(id ?? "0", 10);
-  const startProduct = product.find((p) => p.id === productId);
+  const startProduct = products.find((p) => p.id === productId);
 
   const [soldCount] = useState(Math.floor(Math.random() * 300) + 1);
   const [rating] = useState((Math.random() * 1 + 4).toFixed(1));
