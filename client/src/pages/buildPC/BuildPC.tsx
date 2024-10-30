@@ -2,31 +2,59 @@ import "./BuildPC.scss";
 import { products } from "../../data/dummyProduct";
 import { Product } from "../../data/ProductInterface";
 import { useState } from "react";
+import PartSelection from "../../components/partSelection/PartSelection";
 
-const formatPrice = (price: number): string => {
-  return `Rp${price.toLocaleString("id-ID")}`;
-};
+type PartType =
+  | "CPU"
+  | "Motherboard"
+  | "GPU"
+  | "Memory"
+  | "Storage"
+  | "PSU"
+  | "Case"
+  | "CPU Cooler"
+  | "PC Fans";
+
+interface SelectedParts {
+  [key: string]: {
+    product: Product | null;
+    quantity: number;
+  };
+}
 
 const BuildPC = () => {
-  const [selectedCPU, setSelectedCPU] = useState<Product | null>(null);
-  const [cpuQuantity, setCpuQuantity] = useState<number>(0);
+  const [selectedParts, setSelectedParts] = useState<SelectedParts>({
+    CPU: { product: null, quantity: 0 },
+    Motherboard: { product: null, quantity: 0 },
+    GPU: { product: null, quantity: 0 },
+    Memory: { product: null, quantity: 0 },
+    Storage: { product: null, quantity: 0 },
+    PSU: { product: null, quantity: 0 },
+    Case: { product: null, quantity: 0 },
+    "CPU Cooler": { product: null, quantity: 0 },
+    "PC Fans": { product: null, quantity: 0 },
+  });
 
-  const cpuOptions: Product[] = products.filter(
-    (product) => product.category === "CPU"
-  );
+  const getProductOptions = (category: PartType): Product[] =>
+    products.filter((product) => product.category === category);
 
-  const handleCPUChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const productId = Number(event.target.value);
-    const product = cpuOptions.find((cpu) => cpu.id === productId) || null;
-    setSelectedCPU(product);
-    setCpuQuantity(product ? 1 : 0);
+  const handlePartChange = (partName: PartType, productId: number) => {
+    const options = getProductOptions(partName);
+    const product = options.find((option) => option.id === productId) || null;
+    setSelectedParts((prevState) => ({
+      ...prevState,
+      [partName]: { product, quantity: product ? 1 : 0 },
+    }));
   };
 
-  const handleCpuQuantityChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const value = Math.max(Number(event.target.value), 1);
-    setCpuQuantity(value);
+  const handleQuantityChange = (partName: PartType, quantity: number) => {
+    setSelectedParts((prevState) => ({
+      ...prevState,
+      [partName]: {
+        ...prevState[partName],
+        quantity: Math.max(quantity, 1),
+      },
+    }));
   };
 
   return (
@@ -42,7 +70,7 @@ const BuildPC = () => {
           </div>
           <div className="powerEST bg-[#2B85C1] text-white w-[28rem] px-8 py-2 rounded-md">
             <h1 className="powerStatus font-bold">Power Estimation:</h1>
-            <span className="calcPower font-bold">463W</span>
+            <span className="calcPower font-bold">-</span>
           </div>
         </div>
         <h1 className="buildTitle">Choose Your Build Parts</h1>
@@ -55,174 +83,24 @@ const BuildPC = () => {
               <th>Price</th>
               <th>Actions</th>
             </tr>
-            <tr className="partLine">
-              <td>
-                <span>CPU:</span>
-              </td>
-              <td>
-                <select name="" id="" onChange={handleCPUChange}>
-                  <option value="">Choose your CPU...</option>
-                  {cpuOptions.map((cpu) => (
-                    <option key={cpu.id} value={cpu.id}>
-                      {cpu.name}
-                    </option>
-                  ))}
-                </select>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  value={cpuQuantity}
-                  min={1}
-                  onChange={handleCpuQuantityChange}
-                  disabled={!selectedCPU}
-                />
-              </td>
-              <td>
-                <span className="showPrice">
-                  {selectedCPU ? `${formatPrice(selectedCPU.price)}` : "-"}
-                </span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>Motherboard:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>CPU Cooler:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>Memory:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>Storage:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>GPU:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>PSU:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>Case:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
-            <tr className="partLine">
-              <td>
-                <span>PC Fans:</span>
-              </td>
-              <td>
-                <select name="" id=""></select>
-              </td>
-              <td>
-                <input type="number" name="" id="" />
-              </td>
-              <td>
-                <span className="showPrice"></span>
-              </td>
-              <td>
-                <button>Buy</button>
-              </td>
-            </tr>
+            {Object.keys(selectedParts).map((partName) => (
+              <PartSelection
+                key={partName}
+                partName={partName as PartType}
+                options={getProductOptions(partName as PartType)}
+                selectedOption={selectedParts[partName].product}
+                quantity={selectedParts[partName].quantity}
+                onSelectChange={(e) =>
+                  handlePartChange(partName as PartType, Number(e.target.value))
+                }
+                onQuantityChange={(e) =>
+                  handleQuantityChange(
+                    partName as PartType,
+                    Number(e.target.value)
+                  )
+                }
+              />
+            ))}
           </table>
           <div className="totalParts">
             <span>Total All Parts: </span>
