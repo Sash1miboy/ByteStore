@@ -46,4 +46,31 @@
       }
     }
   }
+
+  @media (max-width: 1820px) {
+    td {
+      padding: 0.75rem 2rem;
+
+      select {
+        width: 18rem;
+      }
+
+      input {
+        border: 1px solid #cccccc;
+        border-radius: 0.375rem;
+        width: 4rem;
+        height: 2.5rem;
+      }
+
+      button {
+        align-self: center;
+        align-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: #0291d7;
+        }
+      }
+    }
+  }
 }

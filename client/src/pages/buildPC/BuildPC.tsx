@@ -135,7 +135,7 @@ const BuildPC = () => {
       <div className="container">
         <div className="header">
           <div
-            className={`compatible text-white w-[58rem] px-8 py-2 rounded-md ${
+            className={`compatible text-white w-[70%] px-8 py-2 rounded-md ${
               isCompatible ? "bg-[#00B16A]" : "bg-red-500"
             }`}
           >
@@ -147,7 +147,7 @@ const BuildPC = () => {
             </span>
           </div>
 
-          <div className="powerEST bg-[#2B85C1] text-white w-[28rem] px-8 py-2 rounded-md">
+          <div className="powerEST bg-[#2B85C1] text-white w-[28%] px-8 py-2 rounded-md">
             <h1 className="powerStatus font-bold">Power Estimation:</h1>
             <span className="calcPower font-bold">{totalPower} W</span>
           </div>

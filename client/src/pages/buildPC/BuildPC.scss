@@ -24,6 +24,10 @@
         .status {
           font-size: 1.5rem;
         }
+
+        .extra {
+          font-size: 1rem;
+        }
       }
 
       .powerEST {
@@ -34,6 +38,17 @@
         .powerStatus,
         .calcPower {
           font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 1820px) {
+        .compatible,
+        .powerEST {
+          .status,
+          .powerStatus,
+          .calcPower {
+            font-size: 1.2rem;
+          }
         }
       }
     }
@@ -67,6 +82,7 @@
       .totalParts {
         display: flex;
         align-items: center;
+        margin-left: 50vw;
         gap: 2rem;
 
         span {
