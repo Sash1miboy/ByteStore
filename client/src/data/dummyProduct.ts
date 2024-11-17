@@ -152,7 +152,7 @@ export const products: Product[] = [
     desc: "Rasakan performa gaming yang luar biasa dengan White Frost Custom Gaming PC. Ditenagai oleh prosesor Intel i5-13600K, PC ini menawarkan kecepatan dan efisiensi luar biasa, ideal untuk gaming modern dan multitasking. Dengan kartu grafis NVIDIA RTX 4060 8GB, nikmati pengalaman gaming yang imersif dengan grafis yang tajam dan kemampuan ray tracing real-time. Dilengkapi dengan 32GB RAM DDR5 berkecepatan 6000MHz, sistem ini memastikan kinerja yang mulus bahkan saat menjalankan aplikasi berat atau bermain game dengan pengaturan tinggi. Desain casing putih yang elegan dan modern tidak hanya memberikan tampilan yang menarik tetapi juga memaksimalkan pendinginan untuk menjaga suhu tetap optimal. White Frost Custom Gaming PC adalah solusi sempurna bagi gamer yang mencari kombinasi antara estetika dan performa tinggi.",
     images: [
       "https://rgbcustompc.com/cdn/shop/files/SY-PCBuild-FrostNov2023.png?v=1703786732",
-      "https://scontent.fcgk6-2.fna.fbcdn.net/v/t39.30808-6/276172267_3151628085110060_5013712751090209096_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3a1ebe&_nc_eui2=AeH5ypdaUw6axpAqA1ISfPYYOTxJGU_1itE5PEkZT_WK0Uw6M0ibfxCDKc-8HjgVqzLrINjpT6q1-9wh6UcWPvkI&_nc_ohc=yIw5Ml9H_wEQ7kNvgEjRUP7&_nc_zt=23&_nc_ht=scontent.fcgk6-2.fna&_nc_gid=Ama6kyUaH4HIS6XZjRt0yMj&oh=00_AYC3uyKEDKPwPqg1i26d0qK8bAm1rA46pXALCAz7kl7sFA&oe=6722757E",
+      "https://i.ytimg.com/vi/6bpBD3v5pS4/maxresdefault.jpg",
       "https://i.ytimg.com/vi/SqUnPvMJORw/maxresdefault.jpg",
     ],
     category: "Prebuilt",
