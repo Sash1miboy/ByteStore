@@ -2,7 +2,7 @@ export const categoriesProduct = [
   {
     id: "1",
     image: "/PC Icon.svg",
-    catName: "Prebuilt PC",
+    catName: "Prebuilt",
   },
   {
     id: "2",
@@ -12,7 +12,7 @@ export const categoriesProduct = [
   {
     id: "3",
     image: "/CPU Icon.svg",
-    catName: "Processor",
+    catName: "CPU",
   },
   {
     id: "4",
@@ -27,7 +27,7 @@ export const categoriesProduct = [
   {
     id: "6",
     image: "/RAM Icon.svg",
-    catName: "RAM",
+    catName: "Memory",
   },
   {
     id: "7",
@@ -52,7 +52,7 @@ export const categoriesProduct = [
   {
     id: "11",
     image: "/Casing.svg",
-    catName: "Casing",
+    catName: "Case",
   },
   {
     id: "12",

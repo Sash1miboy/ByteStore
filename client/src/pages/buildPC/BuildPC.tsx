@@ -131,7 +131,7 @@ const BuildPC = () => {
   };
 
   return (
-    <div className="buildPC">
+    <div className="buildPC bg-gray-50">
       <div className="container">
         <div className="header">
           <div
