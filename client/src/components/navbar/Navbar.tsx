@@ -50,6 +50,7 @@ const Navbar = () => {
                 type="text"
                 placeholder="Search PC Parts..."
                 className="searchText px-10 py-1.5 border border-black rounded-md w-full"
+                autoComplete="off"
               />
             </form>
           </div>
