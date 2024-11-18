@@ -1,4 +1,4 @@
-import "./category.scss";
+import "./Category.scss";
 import { products } from "../../data/dummyProduct";
 import ProductCard from "../../components/productCard/ProductCard";
 import { useParams } from "react-router-dom";
