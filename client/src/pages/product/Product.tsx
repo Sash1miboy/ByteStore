@@ -25,7 +25,7 @@ const Product = () => {
   };
 
   return (
-    <div className="product">
+    <div className="product bg-gray-50">
       <div className="container">
         <div className="preview">
           <FlowbiteCarousel

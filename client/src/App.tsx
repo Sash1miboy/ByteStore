@@ -3,11 +3,12 @@ import "./style/tailwind.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
-
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Product from "./pages/product/Product";
 import BuildPC from "./pages/buildPC/BuildPC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import Category from "./pages/category/Category";
+
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 function App() {
   const Layout = () => {
@@ -37,6 +38,10 @@ function App() {
         {
           path: "/build-pc",
           element: <BuildPC />,
+        },
+        {
+          path: "/category/:categoryName",
+          element: <Category />,
         },
       ],
     },

@@ -13,7 +13,12 @@ const Categories = () => {
         <div className="content">
           {categoriesProduct.map((category) => (
             <div className="catItems" key={category.id}>
-              <Link to="" className="link catContent">
+              <Link
+                to={`/category/${category.catName
+                  .toLowerCase()
+                  .replace(" ", "-")}`}
+                className="link catContent"
+              >
                 <div className="box bg-[#02A9F7]">
                   <img src={category.image} alt={category.image} />
                 </div>
