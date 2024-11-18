@@ -1,0 +1,72 @@
+.search-page {
+  padding: 2rem 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    .searchHeader {
+      h1 {
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .searchLine {
+      width: 100%;
+      margin-top: 1rem;
+      border: 1px solid #02577a;
+    }
+
+    .searchContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .no-products {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 2rem;
+
+        h2 {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        span {
+          text-align: center;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+
+      .there-products {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 3vw;
+
+        @media (max-width: 1440px) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 1rem;
+        }
+
+        @media (max-width: 450px) {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}

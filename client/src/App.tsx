@@ -7,6 +7,7 @@ import Product from "./pages/product/Product";
 import BuildPC from "./pages/buildPC/BuildPC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Category from "./pages/category/Category";
+import Search from "./pages/search/Search";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -42,6 +43,10 @@ function App() {
         {
           path: "/category/:categoryName",
           element: <Category />,
+        },
+        {
+          path: "/search",
+          element: <Search />,
         },
       ],
     },

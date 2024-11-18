@@ -1,10 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,6 +14,15 @@ const Navbar = () => {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const searchTerm = e.currentTarget.search.value;
+    if (searchTerm.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+      e.currentTarget.reset();
+    }
+  };
 
   return (
     <div className="navbar">
@@ -29,18 +39,19 @@ const Navbar = () => {
 
         <div className={`navItems ${isMenuOpen ? "open" : ""}`}>
           <div className="searchInput">
-            <div className="searchBar">
+            <form onSubmit={handleSearch} className="searchBar">
               <img
                 src="/search.svg"
                 alt="search"
                 className="searchIcon w-4 h-4"
               />
               <input
+                name="search"
                 type="text"
                 placeholder="Search PC Parts..."
                 className="searchText px-10 py-1.5 border border-black rounded-md w-full"
               />
-            </div>
+            </form>
           </div>
 
           <div className="tools">
