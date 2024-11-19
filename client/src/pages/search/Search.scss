@@ -4,6 +4,14 @@
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 768px) {
+    padding: 1rem 5%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 2%;
+  }
+
   .container {
     .searchHeader {
       h1 {
@@ -33,6 +41,7 @@
         align-items: center;
         flex-direction: column;
         padding-top: 2rem;
+        padding-bottom: 2rem;
 
         h2 {
           text-align: center;

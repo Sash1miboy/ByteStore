@@ -4,6 +4,16 @@
   display: flex;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    padding: 0 5%;
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 3%;
+    padding-top: 1rem;
+  }
+
   .container {
     display: flex;
     justify-content: center;

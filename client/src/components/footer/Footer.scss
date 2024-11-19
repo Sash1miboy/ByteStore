@@ -5,6 +5,14 @@
   align-items: center;
   border-top: 0.2rem solid #02577a;
 
+  @media (max-width: 768px) {
+    padding: 0.6% 5%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.6% 3%;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -103,7 +111,7 @@
       }
 
       @media (max-width: 500px) {
-        width: 70vw;
+        width: 80vw;
         height: 0;
       }
     }

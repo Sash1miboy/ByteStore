@@ -168,6 +168,33 @@
   }
 }
 
+@media (max-width: 500px) {
+  .partLine {
+    td {
+      padding: 0.3rem;
+
+      select {
+        width: 5rem;
+        height: 1.8rem;
+      }
+
+      input {
+        width: 3rem;
+        height: 1.8rem;
+      }
+
+      .showPrice {
+        width: 3.5rem;
+        height: 1.8rem;
+      }
+
+      button {
+        padding: 0.5rem 0.5rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 390px) {
   .partLine {
     td {

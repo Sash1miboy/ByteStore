@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="containerCard rounded-md">
         <img src={images[0]} alt={name} className="productImage" />
         <div className="productInfo">
-          <span className="productName">{addDot(name, 26)}</span>
+          <span className="productName">{addDot(name, 24)}</span>
           <span className="productPrice">{formatPrice(price)}</span>
         </div>
         <button className="bg-[#00B16A] hover:bg-[#009B5D] text-white">
