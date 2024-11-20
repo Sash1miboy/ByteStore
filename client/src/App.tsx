@@ -8,6 +8,7 @@ import BuildPC from "./pages/buildPC/BuildPC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Category from "./pages/category/Category";
 import Search from "./pages/search/Search";
+import Payment from "./pages/payment/Payment";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -47,6 +48,10 @@ function App() {
         {
           path: "/search",
           element: <Search />,
+        },
+        {
+          path: "/payment",
+          element: <Payment />,
         },
       ],
     },

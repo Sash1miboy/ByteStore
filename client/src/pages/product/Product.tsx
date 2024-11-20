@@ -2,12 +2,13 @@ import "./Product.scss";
 import { products } from "../../data/dummyProduct";
 import { Carousel as FlowbiteCarousel } from "flowbite-react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams<{ id: string }>();
   const productId = parseInt(id ?? "0", 10);
   const startProduct = products.find((p) => p.id === productId);
+  const navigate = useNavigate();
 
   const [soldCount] = useState(Math.floor(Math.random() * 300) + 1);
   const [rating] = useState((Math.random() * 1 + 4).toFixed(1));
@@ -22,6 +23,12 @@ const Product = () => {
     control: {
       base: "flex items-center justify-center w-10 h-10 text-white transition duration-300 bg-gray-300 rounded-full hover:bg-black",
     },
+  };
+
+  const handleBuy = () => {
+    if (startProduct) {
+      navigate("/payment", { state: { price: startProduct.price } });
+    }
   };
 
   return (
@@ -63,7 +70,10 @@ const Product = () => {
             <button className="cartButton hover:bg-gray-100">
               Add to Cart
             </button>
-            <button className="buyButton bg-[#00B16A] hover:bg-[#009B5D] border-2 border-[#00B16A] hover:border-[#009B5D] text-white">
+            <button
+              className="buyButton bg-[#00B16A] hover:bg-[#009B5D] border-2 border-[#00B16A] hover:border-[#009B5D] text-white"
+              onClick={handleBuy}
+            >
               Buy
             </button>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Product } from "../../data/ProductInterface";
+import { useNavigate } from "react-router-dom";
 import "./PartSelection.scss";
 
 interface PartSelectionProps {
@@ -19,11 +20,18 @@ const PartSelection: React.FC<PartSelectionProps> = ({
   onSelectChange,
   onQuantityChange,
 }) => {
+  const navigate = useNavigate();
   const formatPrice = (price: number): string => {
     return `Rp${price.toLocaleString("id-ID")}`;
   };
 
   const totalPrice = selectedOption ? selectedOption.price * quantity : 0;
+
+  const handleBuy = () => {
+    if (selectedOption && quantity > 0) {
+      navigate("/payment", { state: { price: totalPrice } });
+    }
+  };
 
   return (
     <tr className="partLine">
@@ -55,7 +63,17 @@ const PartSelection: React.FC<PartSelectionProps> = ({
         </span>
       </td>
       <td>
-        <button>Buy</button>
+        <button
+          className={`${
+            !selectedOption || quantity === 0
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#02a9f7] hover:bg-[#0291d7]"
+          } text-white`}
+          onClick={handleBuy}
+          disabled={!selectedOption || quantity === 0}
+        >
+          Buy
+        </button>
       </td>
     </tr>
   );

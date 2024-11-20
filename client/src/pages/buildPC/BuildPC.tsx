@@ -3,6 +3,7 @@ import { products } from "../../data/dummyProduct";
 import { Product } from "../../data/ProductInterface";
 import { useState } from "react";
 import PartSelection from "../../components/partSelection/PartSelection";
+import { useNavigate } from "react-router-dom";
 
 type PartType =
   | "CPU"
@@ -23,6 +24,7 @@ interface SelectedParts {
 }
 
 const BuildPC = () => {
+  const navigate = useNavigate();
   const [isCompatible, setIsCompatible] = useState(true);
   const [totalPower, setTotalPower] = useState(0);
 
@@ -130,6 +132,13 @@ const BuildPC = () => {
     return `Rp${price.toLocaleString("id-ID")}`;
   };
 
+  const handleBuyAll = () => {
+    const totalPrice = calculateTotalPrice();
+    if (totalPrice > 0) {
+      navigate("/payment", { state: { price: totalPrice } });
+    }
+  };
+
   return (
     <div className="buildPC bg-gray-50">
       <div className="container">
@@ -183,7 +192,17 @@ const BuildPC = () => {
           </table>
           <div className="totalParts">
             <span>Total All Parts: {formatPrice(calculateTotalPrice())}</span>
-            <button className="buyAllBTN">Buy All</button>
+            <button
+              className={`buyAllBTN ${
+                calculateTotalPrice() === 0
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#00B16A] hover:bg-[#009B5D]"
+              } text-white`}
+              onClick={handleBuyAll}
+              disabled={calculateTotalPrice() === 0}
+            >
+              Buy All
+            </button>
           </div>
         </div>
       </div>

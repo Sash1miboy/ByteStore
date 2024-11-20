@@ -1,5 +1,5 @@
 import "./ProductCard.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   id?: number;
@@ -28,6 +28,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   name,
   price,
 }) => {
+  const navigate = useNavigate();
+
+  const handleBuy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate("/payment", { state: { price } });
+  };
+
   return (
     <Link to={`/product/${id}`} className="productCard">
       <div className="containerCard rounded-md">
@@ -36,9 +43,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <span className="productName">{addDot(name, 24)}</span>
           <span className="productPrice">{formatPrice(price)}</span>
         </div>
-        <button className="bg-[#00B16A] hover:bg-[#009B5D] text-white">
-          Buy
-        </button>
+        <div className="buySection">
+          <button
+            className="bg-[#00B16A] hover:bg-[#009B5D] text-white"
+            onClick={handleBuy}
+          >
+            Buy
+          </button>
+        </div>
       </div>
     </Link>
   );
